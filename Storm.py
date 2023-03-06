@@ -15,8 +15,8 @@ def reWriteTrooperData():
             distance = math.sqrt((x - 10) ** 2 + (y - 10) ** 2 + (z - 10) ** 2)
             rows.append([id, x, y, z, rank, f"{distance:.2f} KM"])
     table = tabulate(rows, headers=headers, tablefmt="plain", colalign=("center",)*6)
-    print("Stormtrooper Data")
-    print(table)
-
+    title = "Stormtrooper Data"
+    title_width = len(title)
+    print(f"{title:^{title_width}}\n{table}")
 # Call the function to test it
 reWriteTrooperData()
