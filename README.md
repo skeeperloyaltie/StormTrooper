@@ -4,7 +4,7 @@ Create the function reWriteTrooperData that accepts no parameters, reads the dat
 - The Rendezvous Point for all Stormtroopers is at X:10 Y:10 Z:10
 - The ‘Distance to Rendezvous’ is the 3D Euclidean distance from the Stormtrooper to the Rendezvous Point.
 - You may, if you desire, programmatically manipulate the data in the Data file, in any intermediate way, and create one or more temporary files to assist you in displaying the correct output.
-```Input```
+- ```Input```
 ### sample Data.txt
   - ST-1: X60Y31Z2 Sgt
   - ST-2: X32Y43Z5 MSgt
@@ -12,6 +12,6 @@ Create the function reWriteTrooperData that accepts no parameters, reads the dat
   - ST-4: X13Y51Z8 Cp1
   - ST-5: X57Y52Z0 MSgt
 
-```output``` 
+- ```output``` 
 - StormTrooper     X        Y     Z    Rank       DIstamce to Rendezvous
 - 1                60      31    2    Sgt         54.82 KM
