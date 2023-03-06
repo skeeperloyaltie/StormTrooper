@@ -1,15 +1,32 @@
 import math
+def reWriteTrooperData(file):
+    # read data file
+    with open(file, "r") as f:
+        lines = f.readlines()
 
-def reWriteTrooperData():
-    with open("Data.txt") as f:
-        for line in f:
-            parts = line.strip().split()
-            id = parts[0][3:]
-            # Extract the coordinates and remove non-numeric characters
-            coords = "".join(filter(str.isdigit, parts[1]))
-            x, y, z = map(int, [coords[i:i+2] for i in range(0, len(coords), 2)])
-            rank = parts[2]
-            distance = math.sqrt((x - 10) ** 2 + (y - 10) ** 2 + (z - 10) ** 2)
-            print(f"StormTrooper {id:>2} {x:>6} {y:>6} {z:>4} {rank:>7} {distance:>10.2f} KM")
+    # print table header
+    print("{:^90}".format("StormTrooper Data"))
+    print("{:<10}{:<10}{:<10}{:<10}{:<15}".format("ID", "X", "Y", "Z", "Rank"))
+    print("-" * 55)
 
-reWriteTrooperData()
+    # iterate over lines in data file
+    for line in lines:
+        line = line.strip()  # remove leading/trailing whitespace
+
+        if not line:  # skip empty lines
+            continue
+
+        # parse data from line
+        parts = line.split(":")
+        id = parts[0].replace(" ", "")
+        coords = parts[1].replace(" ", "")
+        x, y, z = map(int, coords[1:].split("Y"))
+        rank = parts[2].strip()
+
+        # calculate distance to rendezvous
+        distance = round(math.sqrt((x-10)**2 + (y-10)**2 + (z-10)**2), 2)
+
+        # print trooper data
+        print("{:<10}{:<10}{:<10}{:<10}{:<15}".format(id, x, y, z, rank, distance))
+
+reWriteTrooperData('Data.txt')
