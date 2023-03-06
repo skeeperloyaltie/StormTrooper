@@ -1,9 +1,9 @@
 ## Storm Trooper Formatter
 Create the function reWriteTrooperData that accepts no parameters, reads the data located in the Data file, and prints
 - to the console the corresponding data in the format shown on Slide 2 for each line in the Data file.
-  - The Rendezvous Point for all Stormtroopers is at X:10 Y:10 Z:10
-  - The ‘Distance to Rendezvous’ is the 3D Euclidean distance from the Stormtrooper to the Rendezvous Point.
-  - You may, if you desire, programmatically manipulate the data in the Data file, in any intermediate way, and create one or more temporary files to assist you in displaying the correct output.
+- The Rendezvous Point for all Stormtroopers is at X:10 Y:10 Z:10
+- The ‘Distance to Rendezvous’ is the 3D Euclidean distance from the Stormtrooper to the Rendezvous Point.
+- You may, if you desire, programmatically manipulate the data in the Data file, in any intermediate way, and create one or more temporary files to assist you in displaying the correct output.
 ```Input```
 ### sample Data.txt
   - ST-1: X60Y31Z2 Sgt
