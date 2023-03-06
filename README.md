@@ -13,5 +13,5 @@ Create the function reWriteTrooperData that accepts no parameters, reads the dat
   - ST-5: X57Y52Z0 MSgt
 
 ```output``` 
-StormTrooper     X        Y     Z    Rank       DIstamce to Rendezvous
-1                60      31    2    Sgt         54.82 KM
+- StormTrooper     X        Y     Z    Rank       DIstamce to Rendezvous
+- 1                60      31    2    Sgt         54.82 KM
