@@ -1,10 +1,9 @@
 import math
-
-import math
+from tabulate import tabulate
 
 def reWriteTrooperData():
-    print("StormTrooper  X      Y    Z  Rank      Distance to Rendezvous")
-    print("---------------------------------------------------------")
+    headers = ["StormTrooper", "X", "Y", "Z", "Rank", "Distance to Rendezvous"]
+    rows = []
     with open("Data.txt") as f:
         for line in f:
             parts = line.strip().split()
@@ -14,7 +13,10 @@ def reWriteTrooperData():
             x, y, z = map(int, [coords[i:i+2] for i in range(0, len(coords), 2)])
             rank = parts[2]
             distance = math.sqrt((x - 10) ** 2 + (y - 10) ** 2 + (z - 10) ** 2)
-            print(f"{id:>11} {x:>6} {y:>5} {z:>3} {rank:>8} {distance:>22.2f} KM")
+            rows.append([id, x, y, z, rank, f"{distance:.2f} KM"])
+    table = tabulate(rows, headers=headers, tablefmt="pretty", colalign=("center",)*6)
+    print("Stormtrooper Data")
+    print(table)
 
 # Call the function to test it
 reWriteTrooperData()
